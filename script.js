@@ -3,10 +3,10 @@
 // ============================================
 
 const config = {
-    type: Phaser.AUTO,
+    type: Phaser.Canvas,
     width: window.innerWidth,
     height: window.innerHeight,
-    canvas: document.getElementById('mapa-canvas'),
+    parent: 'game-container',
     physics: {
         default: 'arcade',
         arcade: {
@@ -16,7 +16,6 @@ const config = {
     },
     scene: [VillageScene],
     render: {
-        type: Phaser.Canvas,
         pixelArt: true,
         antialias: false,
         willReadFrequently: true
@@ -33,7 +32,7 @@ const game = new Phaser.Game(config);
 
 // Redimensionar cuando cambie la ventana (correctamente)
 window.addEventListener('resize', () => {
-    if (game.isRunning) {
+    if (game && game.isRunning) {
         game.scale.resize(window.innerWidth, window.innerHeight);
     }
 });
