@@ -2,109 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Evita que al arrastrar el mapa se seleccione el texto o las imágenes sin querer */
-    user-select: none; 
+    user-select: none;
 }
 
 body {
-    background-color: #63AB86;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+#game {
+    width: 100vw;
+    height: 100vh;
 }
 
-/* --- EL VISOR Y EL MAPA GIGANTE --- */
-.mapa-visor {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    cursor: grab; /* Cambia el cursor a una mano abierta */
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.mapa-visor:active {
-    cursor: grabbing; /* Cambia el cursor a mano cerrada al hacer click */
-}
-
-.mapa-contenido {
-    /* Definí acá el tamaño real de tu mundo (ejemplo: 3000px x 3000px) */
-    width: 2880px; 
-    height: 1620px;
-    
-    /* Tu imagen de pasto pixelart */
-    background-image: url('assets/Pasto.png');
-    background-repeat: repeat; /* Si la imagen es un patrón, se repetirá infinitamente */
-    background-size: 512px 256px;
-    image-rendering: pixelated;
-    transform-origin: top left;
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* --- INTERFAZ CON NEGRO AL 40% DE OPACIDAD --- */
-.topbar, .tienda {
-    background-color: rgba(0, 0, 0, 0.5); /* Negro con 40% de opacidad */
-    color: white;
-    backdrop-filter: blur(4px); /* Opcional: le da un toque borroso premium al fondo */
-    position: absolute;
-    z-index: 10; /* Hace que queden por encima del mapa */
-}
-
-/* Barra superior */
-.topbar {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-weight: bold;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Tienda a la derecha */
-.tienda {
-    top: 60px; /* Empieza abajo del header */
-    right: 0;
-    width: 25vw;
-    height: calc(100vh - 60px); /* Ocupa el resto de la altura */
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.seccion-aldeanos, .seccion-mejoras {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.seccion-aldeanos {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Estilo rápido para los botones de la tienda */
-button {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid white;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    width: 100%;
-}
-button:hover {
-    background: rgba(255, 255, 255, 0.3);
+canvas {
+    display: block !important;
 }
