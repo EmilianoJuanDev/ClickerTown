@@ -8,6 +8,7 @@ const config = {
     height: window.innerHeight,
     parent: 'game-container',
     transparent: true,
+    canvas: document.createElement('canvas'),
     physics: {
         default: 'arcade',
         arcade: {
@@ -19,7 +20,8 @@ const config = {
     render: {
         pixelArt: true,
         antialias: false,
-        willReadFrequently: true
+        willReadFrequently: true,
+        clearBeforeRender: true
     },
     scale: {
         mode: Phaser.Scale.FIT,
