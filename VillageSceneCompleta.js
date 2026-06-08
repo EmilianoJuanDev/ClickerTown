@@ -26,9 +26,6 @@ class VillageScene extends Phaser.Scene {
             this.gridManager.worldHeight
         );
 
-        // Crear fondo
-        this.createBackground();
-
         // Crear grupos
         this.buildings = [];
         this.workers = this.add.group();
@@ -49,34 +46,6 @@ class VillageScene extends Phaser.Scene {
         this.gridManager.drawGridLines();
 
         console.log(`🏘️ Village Scene creada - Grid ${GRID_WIDTH}x${GRID_HEIGHT}`);
-    }
-
-    // ============================================
-    // MÉTODO: Crear fondo
-    // ============================================
-    createBackground() {
-        const graphics = this.make.graphics({ x: 0, y: 0, add: false });
-
-        // Cielo
-        graphics.fillStyle(0x87ceeb, 1);
-        graphics.fillRect(0, 0, this.gridManager.worldWidth, this.gridManager.worldHeight * 0.3);
-
-        // Tierra
-        graphics.fillStyle(0x90ee90, 1);
-        graphics.fillRect(0, this.gridManager.worldHeight * 0.3, this.gridManager.worldWidth, this.gridManager.worldHeight * 0.7);
-
-        graphics.generateTexture('village-background', this.gridManager.worldWidth, this.gridManager.worldHeight);
-        graphics.destroy();
-
-        // Centrar la imagen en el mundo
-        const bg = this.add.image(
-            this.gridManager.worldWidth / 2,  // Centro X
-            this.gridManager.worldHeight / 2, // Centro Y
-            'village-background'
-        );
-        bg.setOrigin(0.5, 0.5);  // Origen en el centro
-        bg.setDepth(-100);
-        bg.setScrollFactor(1);
     }
 
     // ============================================
@@ -104,7 +73,7 @@ class VillageScene extends Phaser.Scene {
                 0x4CAF50
             );
             button.setScrollFactor(0);
-            button.setDepth(100);
+            button.setDepth(1000);
             button.setInteractive();
 
             // Texto
@@ -120,7 +89,7 @@ class VillageScene extends Phaser.Scene {
             );
             text.setOrigin(0.5);
             text.setScrollFactor(0);
-            text.setDepth(101);
+            text.setDepth(1001);
 
             // Click listener
             button.on('pointerdown', () => {
@@ -248,7 +217,7 @@ class VillageScene extends Phaser.Scene {
             fontFamily: 'monospace'
         });
         this.debugText.setScrollFactor(0);
-        this.debugText.setDepth(100);
+        this.debugText.setDepth(2000);
     }
 
     // ============================================
