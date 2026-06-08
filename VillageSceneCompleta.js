@@ -321,3 +321,4 @@ class VillageScene extends Phaser.Scene {
    ✅ Múltiples mapas fácil (diferente tamaño grid)
 */
 
+alert('¡VillageScene con Grid y Cámara Avanzada cargada! Revisa la consola para más detalles.');
