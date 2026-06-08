@@ -268,4 +268,3 @@ class CameraManager {
     }
 }
 
-export default CameraManager;

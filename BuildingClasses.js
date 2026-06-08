@@ -386,8 +386,4 @@ class Market extends Building {
     }
 }
 
-// ============================================
-// EXPORTAR CLASES
-// ============================================
 
-export { Building, WoodcutterHut, Mine, Farm, Market };

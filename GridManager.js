@@ -289,5 +289,3 @@ class GridManager {
         this.grid = JSON.parse(data);
     }
 }
-
-export default GridManager;

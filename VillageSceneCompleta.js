@@ -2,10 +2,6 @@
 // EJEMPLO: VillageScene con Grid y Cámara Avanzada
 // ============================================
 
-import GridManager from './GridManager.js';
-import CameraManager from './CameraManager.js';
-import { WoodcutterHut, Mine, Farm, Market } from './BuildingClasses.js';
-
 class VillageScene extends Phaser.Scene {
     constructor() {
         super({ key: 'VillageScene' });
@@ -325,4 +321,3 @@ class VillageScene extends Phaser.Scene {
    ✅ Múltiples mapas fácil (diferente tamaño grid)
 */
 
-export default VillageScene;
