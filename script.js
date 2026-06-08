@@ -7,6 +7,7 @@ const config = {
     width: window.innerWidth,
     height: window.innerHeight,
     parent: 'game-container',
+    transparent: true,
     physics: {
         default: 'arcade',
         arcade: {
