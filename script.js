@@ -16,15 +16,24 @@ const config = {
     },
     scene: [VillageScene],
     render: {
+        type: Phaser.Canvas,
         pixelArt: true,
-        antialias: false
+        antialias: false,
+        willReadFrequently: true
+    },
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        fullscreenTarget: 'parent'
     }
 };
 
 // Crear el juego
 const game = new Phaser.Game(config);
 
-// Redimensionar cuando cambie la ventana
+// Redimensionar cuando cambie la ventana (correctamente)
 window.addEventListener('resize', () => {
-    game.scale.resize(window.innerWidth, window.innerHeight);
+    if (game.isRunning) {
+        game.scale.resize(window.innerWidth, window.innerHeight);
+    }
 });
