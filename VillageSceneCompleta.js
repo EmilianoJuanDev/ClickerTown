@@ -68,8 +68,13 @@ class VillageScene extends Phaser.Scene {
         graphics.generateTexture('village-background', this.gridManager.worldWidth, this.gridManager.worldHeight);
         graphics.destroy();
 
-        const bg = this.add.image(0, 0, 'village-background');
-        bg.setOrigin(0, 0);
+        // Centrar la imagen en el mundo
+        const bg = this.add.image(
+            this.gridManager.worldWidth / 2,  // Centro X
+            this.gridManager.worldHeight / 2, // Centro Y
+            'village-background'
+        );
+        bg.setOrigin(0.5, 0.5);  // Origen en el centro
         bg.setDepth(-100);
         bg.setScrollFactor(1);
     }
@@ -320,5 +325,3 @@ class VillageScene extends Phaser.Scene {
    ✅ IA para pathfinding sobre grid
    ✅ Múltiples mapas fácil (diferente tamaño grid)
 */
-
-alert('¡VillageScene con Grid y Cámara Avanzada cargada! Revisa la consola para más detalles.');
